@@ -1,28 +1,10 @@
-name: JS Lint & Motivate
+name: Simple Hello
 
-on:
-  workflow_dispatch:
+on: push
 
 jobs:
-  js-check:
+  say-hello:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run ESLint
-        run: npx eslint .
-
-      - name: Motivational Quote
-        run: |
-          echo "You're doing great 💪"
-          echo "Keep pushing 🚀"
+      - name: Say Hello
+        run: echo "Hello from GitHub Actions!"
