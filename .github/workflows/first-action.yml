@@ -1,13 +1,28 @@
-name: First Workflow
+name: JS Lint & Motivate
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
 
 jobs:
-  first-job:
+  js-check:
     runs-on: ubuntu-latest
-    steps:
-      - name: Print Gree
-        run: echo "Hello World"
 
-      - name: Print bybye
-        run: echo "Done -bye"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run ESLint
+        run: npx eslint .
+
+      - name: Motivational Quote
+        run: |
+          echo "You're doing great 💪"
+          echo "Keep pushing 🚀"
