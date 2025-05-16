@@ -4,7 +4,7 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
-      - name:Print Gree
+      - name: Print Gree
         run: echo "Hello World"
       - name: Print bybye
         run: echo "Done -bye"
